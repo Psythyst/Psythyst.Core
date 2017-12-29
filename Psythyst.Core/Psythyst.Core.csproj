@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\T2rkus.Spark\T2rkus.Spark\T2rkus.Spark.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+<PropertyGroup>
+  <VersionPrefix>0.4.0</VersionPrefix>
+  <VersionSuffix>beta</VersionSuffix>
+</PropertyGroup>
+
+<PropertyGroup>
+    <Title>T2rkus.Spark.Core</Title>
+    <PackageId>T2rkus.Spark.Core</PackageId>
+    <PackageVersion>0.4.0-beta1</PackageVersion>
+    <PackageProjectUrl>https://github.com/T2RKUS/Spark</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/T2RKUS/Spark/blob/develop/LICENCE.txt</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/T2RKUS/Spark</RepositoryUrl>
+    <Authors>Alexander Hunt</Authors>
+    <Description>Spark CodeGenerator Core</Description>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <Copyright>Copyright 2017 (c) Alexander Hunt.</Copyright>
+    <PackageTags>CodeGenerator,Spark,Core</PackageTags>
+</PropertyGroup>
+
+</Project>

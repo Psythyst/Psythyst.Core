@@ -1,0 +1,3 @@
+[submodule "Psythyst"]
+	path = Psythyst
+	url = https://github.com/Psythyst/Psythyst.git
