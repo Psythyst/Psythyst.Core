@@ -39,7 +39,6 @@ namespace Psythyst.Core
             return RunGenerator(Model, _Generator.Values, OnError);
         }
 
-
         public IEnumerable<TResult> RunPostProcessor(IEnumerable<TResult> ResultCollection, Action<IPostProcessor<TResult>, Exception> OnError = null)
         {
             return RunPostProcessor(ResultCollection, _PostProcessor.Values, OnError);
@@ -74,16 +73,13 @@ namespace Psythyst.Core
             }
 
             return _ResultList;
-            //return Collection.SelectMany(x => x.Generate(Model));
         }
 
         public static IEnumerable<TResult> RunPostProcessor(IEnumerable<TResult> ResultCollection, IEnumerable<IPostProcessor<TResult>> PostProcessorCollection, Action<IPostProcessor<TResult>, Exception> OnError = null)
         {
+            var ResultList = new List<TResult>();
             var _PostProcessorCollection = PostProcessorCollection.OrderByDescending(x => x.Priority);
             var Current = ResultCollection; 
-            //PostProcessorCollection.Each(x => Current = x.Process(Current)); 
-            
-            var ResultList = new List<TResult>();
 
             foreach (var PostProcessor in _PostProcessorCollection)
             {

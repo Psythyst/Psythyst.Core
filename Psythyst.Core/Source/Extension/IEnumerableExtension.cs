@@ -12,17 +12,5 @@ namespace Psythyst.Core
         {
             foreach (var Item in Collection) Action.Invoke(Item);
         }
-
-        public static void TryEach<T>(this IEnumerable<T> Collection, Action<T> Action, Action<T, Exception> OnError)
-        {
-            foreach (var Item in Collection){
-                try {
-                    Action.Invoke(Item);
-                }
-                catch (Exception Ex){
-                    OnError?.Invoke(Item, Ex);
-                }
-            }
-        }
     }
 }
