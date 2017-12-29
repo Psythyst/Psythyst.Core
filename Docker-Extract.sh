@@ -1,14 +1,8 @@
 mkdir -p ./Publish
+DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# TODO: Replace all those docker runs... (so slow) X_X
+DOCKER_VOLUME="$DIRECTORY/Publish:/Publish"
+DOCKER_COMMAND="cp -R /Psythyst.Core/Publish /"
+DOCKER_IMAGE="psythyst/psythyst-core:latest"
 
-# Extract Psythyst
-docker run --rm -it psythyst/psythyst-core:latest cat /Psythyst/Psythyst/Publish/Psythyst.dll > ./Publish/Psythyst.dll
-docker run --rm -it psythyst/psythyst-core:latest cat /Psythyst/Psythyst/Publish/Psythyst.deps.json > ./Publish/Psythyst.deps.json
-docker run --rm -it psythyst/psythyst-core:latest cat /Psythyst/Psythyst/Publish/Psythyst.pdb > ./Publish/Psythyst.pdb
-
-# Extract Psythyst Core
-docker run --rm -it psythyst/psythyst-core:latest cat /Psythyst.Core/Publish/Psythyst.Core.dll > ./Publish/Psythyst.Core.dll
-docker run --rm -it psythyst/psythyst-core:latest cat /Psythyst.Core/Publish/Psythyst.Core.deps.json > ./Publish/Psythyst.Core.deps.json
-docker run --rm -it psythyst/psythyst-core:latest cat /Psythyst.Core/Publish/Psythyst.Core.pdb > ./Publish/Psythyst.Core.pdb
-
+docker run -it --rm -v $DOCKER_VOLUME $DOCKER_IMAGE $DOCKER_COMMAND
