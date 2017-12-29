@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Psythyst.Core", "Psythyst.Core\Psythyst.Core.csproj", "{5E13071A-F446-4AEA-A56C-BC531D8F3215}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Psythyst", "Psythyst", "{AFC730DF-30AA-4E4D-84E6-22F12AAF8DED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Psythyst", "Psythyst\Psythyst\Psythyst.csproj", "{B7161208-762F-4BF1-A051-AE603DA4754C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,20 @@ Global
 		{5E13071A-F446-4AEA-A56C-BC531D8F3215}.Release|x64.Build.0 = Release|x64
 		{5E13071A-F446-4AEA-A56C-BC531D8F3215}.Release|x86.ActiveCfg = Release|x86
 		{5E13071A-F446-4AEA-A56C-BC531D8F3215}.Release|x86.Build.0 = Release|x86
+		{B7161208-762F-4BF1-A051-AE603DA4754C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7161208-762F-4BF1-A051-AE603DA4754C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7161208-762F-4BF1-A051-AE603DA4754C}.Debug|x64.ActiveCfg = Debug|x64
+		{B7161208-762F-4BF1-A051-AE603DA4754C}.Debug|x64.Build.0 = Debug|x64
+		{B7161208-762F-4BF1-A051-AE603DA4754C}.Debug|x86.ActiveCfg = Debug|x86
+		{B7161208-762F-4BF1-A051-AE603DA4754C}.Debug|x86.Build.0 = Debug|x86
+		{B7161208-762F-4BF1-A051-AE603DA4754C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7161208-762F-4BF1-A051-AE603DA4754C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7161208-762F-4BF1-A051-AE603DA4754C}.Release|x64.ActiveCfg = Release|x64
+		{B7161208-762F-4BF1-A051-AE603DA4754C}.Release|x64.Build.0 = Release|x64
+		{B7161208-762F-4BF1-A051-AE603DA4754C}.Release|x86.ActiveCfg = Release|x86
+		{B7161208-762F-4BF1-A051-AE603DA4754C}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B7161208-762F-4BF1-A051-AE603DA4754C} = {AFC730DF-30AA-4E4D-84E6-22F12AAF8DED}
 	EndGlobalSection
 EndGlobal
