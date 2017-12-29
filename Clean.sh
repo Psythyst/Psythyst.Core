@@ -4,4 +4,4 @@ rm -rf ./Psythyst.Core/obj
 rm -rf ./Psythyst.Core/Publish
 
 # Clean Psythyst
-sh ./Psythyst/Clean.sh
+cd ./Psythyst && sh ./Clean.sh
