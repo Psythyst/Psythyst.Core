@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using T2rkus.Spark;
+using Psythyst;
 
-namespace T2rkus.Spark.Core
+namespace Psythyst.Core
 {
     /// <summary>
     /// ProjectUnit Class.

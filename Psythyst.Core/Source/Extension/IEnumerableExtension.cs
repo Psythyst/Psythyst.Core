@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace T2rkus.Spark.Core
+namespace Psythyst.Core
 {
     /// <summary>
     /// IEnumerableExtension Class.
