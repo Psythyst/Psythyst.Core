@@ -16,22 +16,22 @@ namespace Psythyst.Core
  
         public IProjectUnit<TSource, TResult> AddGenerator(IGenerator<TSource, TResult> Generator, bool Condition = true)
         {
-            if(Condition) _Generator.Add(Generator.ToString(), Generator); return this;
+            if(Condition && Generator != null) _Generator.Add(Generator.ToString(), Generator); return this;
         }
 
         public IProjectUnit<TSource, TResult> AddGeneratorCollection(IEnumerable<IGenerator<TSource, TResult>> Collection, bool Condition = true)
         {
-            if(Condition) Collection.Each(x => _Generator.Add(x.ToString(), x)); return this;
+            if(Condition && Collection != null) Collection.Each(x => { if (x != null) _Generator.Add(x.ToString(), x); }); return this;
         }
 
         public IProjectUnit<TSource, TResult> AddPostProcessor(IPostProcessor<TResult> PostProcessor, bool Condition = true)
         {
-            if(Condition) _PostProcessor.Add(PostProcessor.ToString(), PostProcessor); return this;
+            if(Condition && PostProcessor != null) _PostProcessor.Add(PostProcessor.ToString(), PostProcessor); return this;
         }
 
         public IProjectUnit<TSource, TResult> AddPostProcessorCollection(IEnumerable<IPostProcessor<TResult>> Collection, bool Condition = true)
         {
-            if(Condition) Collection.Each(x => _PostProcessor.Add(x.ToString(), x)); return this;
+            if(Condition && Collection != null) Collection.Each(x => { if (x != null) _PostProcessor.Add(x.ToString(), x); }); return this;
         }
 
         public IEnumerable<TResult> RunGenerator(TSource Model, Action<IGenerator<TSource, TResult>, Exception> OnError = null)
@@ -46,7 +46,7 @@ namespace Psythyst.Core
 
         public IEnumerable<TResult> Run(TSource Model, Action<IGenerator<TSource, TResult>, Exception> OnGeneratorError = null, Action<IPostProcessor<TResult>, Exception> OnPostProcessorError = null)
         {
-            return RunPostProcessor(RunGenerator(Model, OnGeneratorError), OnPostProcessorError);
+            return Run(Model, _Generator.Values, _PostProcessor.Values, OnGeneratorError, OnPostProcessorError);
         }
 
         public static IProjectUnit<TSource, TResult> Create()
@@ -68,7 +68,7 @@ namespace Psythyst.Core
                 }
                 catch (Exception Error) 
                 {
-                    OnError?.Invoke(Generator, Error);
+                    if(OnError != null) OnError.Invoke(Generator, Error);
                 }
             }
 
@@ -77,7 +77,6 @@ namespace Psythyst.Core
 
         public static IEnumerable<TResult> RunPostProcessor(IEnumerable<TResult> ResultCollection, IEnumerable<IPostProcessor<TResult>> PostProcessorCollection, Action<IPostProcessor<TResult>, Exception> OnError = null)
         {
-            var ResultList = new List<TResult>();
             var _PostProcessorCollection = PostProcessorCollection.OrderByDescending(x => x.Priority);
             var Current = ResultCollection; 
 
@@ -89,7 +88,7 @@ namespace Psythyst.Core
                 }
                 catch (Exception Error) 
                 {
-                    OnError?.Invoke(PostProcessor, Error);
+                    if(OnError != null) OnError.Invoke(PostProcessor, Error);
                 }
             }
 
