@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+  <Name>Psythyst.Core</Name>
+  <DefaultAction>resync</DefaultAction>
+  <GenerateNuGetRepositories>true</GenerateNuGetRepositories>
+</Module>

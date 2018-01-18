@@ -1,10 +1,21 @@
 [Dd]ebug/
 [Rr]elease/
 [Pp]ublish
+[Pp]ackage
 [Bb]in/
 [Oo]bj/
 [Ll]og/
 [Nn]uget/
+[Tt]ools/
+
+*.speccache
+*.Linux.sln
+*.Windows.sln
+*.MacOS.sln
+
+*.Linux.csproj
+*.Windows.csproj
+*.MacOS.csproj
 
 .vs/
 .vscode/

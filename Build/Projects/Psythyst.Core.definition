@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Name="Psythyst.Core" Path="Psythyst.Core/Psythyst.Core" Type="Library">
+  <Properties>
+    <FrameworkVersions>
+      <Platform Name="MacOS">
+        <Version>v4.6</Version>
+      </Platform>
+      <Platform Name="Windows">
+        <Version>v4.6</Version>
+      </Platform>
+      <Platform Name="Linux">
+        <Version>v4.6</Version>
+      </Platform>
+    </FrameworkVersions>
+  </Properties>
+  <References>
+    <Reference Include="System" />
+    <Reference Include="Psythyst" />
+  </References>
+  <Files>
+    <Compile Include="Source\**\*.cs" />
+  </Files>
+</Project>

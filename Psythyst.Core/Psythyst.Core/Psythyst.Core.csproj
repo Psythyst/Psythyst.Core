@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Psythyst\Psythyst\Psythyst.csproj" />
+    <ProjectReference Include="..\..\Psythyst\Psythyst\Psythyst\Psythyst.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -9,14 +9,14 @@
   </PropertyGroup>
 
 <PropertyGroup>
-  <VersionPrefix>1.0.0</VersionPrefix>
+  <VersionPrefix>1.4.0</VersionPrefix>
   <!--<VersionSuffix>stable</VersionSuffix>-->
 </PropertyGroup>
 
 <PropertyGroup>
     <Title>Psythyst.Core</Title>
     <PackageId>Psythyst.Core</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.4.0</PackageVersion>
     <PackageProjectUrl>https://github.com/Psythyst/Psythyst.Core</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/Psythyst/Psythyst.Core/blob/develop/LICENCE.txt</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/Psythyst/Psythyst.Core</RepositoryUrl>
